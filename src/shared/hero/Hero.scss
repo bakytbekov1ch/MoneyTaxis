@@ -1,0 +1,45 @@
+@import "../../mixin";
+
+.hero {
+  margin: 7px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .hero__buttons {
+    @include flexbox(start, center);
+    gap: 7px;
+
+    button {
+      border: 1px solid black;
+      background: #f7b731;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 3px 8px;
+      letter-spacing: 0.5px;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "inter";
+
+      .link {
+        color: black;
+      }
+    }
+  }
+  .hero__input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    @include flexbox(start, center);
+
+    p {
+      color: black;
+      font-size: 15px;
+      font-weight: 400;
+      font-family: "inter";
+      padding-left: 8px;
+    }
+  }
+}

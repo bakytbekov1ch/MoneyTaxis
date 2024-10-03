@@ -1,0 +1,43 @@
+@media (max-width: 566px) {
+  .container {
+    .product {
+      gap: 5px;
+    }
+  }
+}
+
+@media (max-width: 551px) {
+  .container {
+    .product {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 451px) {
+  .container {
+    .product {
+      .product__data {
+        img {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 401px) {
+  .container {
+    .product {
+      gap: 15px;
+      grid-template-columns: repeat(1, 1fr);
+
+      .product__data {
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../mixin";
+
+.footer {
+  .footer__content {
+    height: 50px;
+    background: #f7b731;
+    border-radius: 3px 3px 15px 15px;
+    @include flexbox(center);
+
+    p {
+      width: 100%;
+      padding: 5px;
+      color: black;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: "inter";
+      text-align: center;
+      letter-spacing: 0.5px;
+      border-top: 1px solid black;
+    }
+  }
+}

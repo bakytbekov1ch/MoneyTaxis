@@ -1,0 +1,45 @@
+@media (max-width: 581px) {
+  .container {
+    .header {
+      .header__content {
+        .header__logo {
+          width: 110px;
+          height: 35px;
+          font-size: 20px;
+        }
+
+        .header__translate {
+          select {
+            font-size: 20px;
+            font-weight: 400;
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    .header {
+      .header__content {
+        .header__logo {
+          width: 110px;
+          height: 35px;
+          font-size: 18px;
+          border: 1px solid black;
+          border-bottom: 3px solid black;
+        }
+
+        .header__translate {
+          select {
+            font-size: 18px;
+            font-weight: 400;
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}
