@@ -24,7 +24,7 @@ function Product() {
             </div>
 
             <button>
-              <Link to="/" className="link">
+              <Link to="/input" className="link">
                 {t("btn")}
               </Link>
             </button>

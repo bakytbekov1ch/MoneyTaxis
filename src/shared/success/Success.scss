@@ -1,0 +1,40 @@
+@import "../../mixin";
+
+.success {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+
+  .success__content {
+    width: 320px;
+    @include flexbox(center);
+    flex-direction: column;
+    gap: 6px;
+
+    img {
+      width: 80px;
+    }
+
+    p {
+      color: black;
+      font-weight: 400;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+
+      mark {
+        padding: 0 10px;
+        border-radius: 20px 0 20px 0;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      border: 1px solid black;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}

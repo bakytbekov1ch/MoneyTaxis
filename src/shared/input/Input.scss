@@ -1,0 +1,80 @@
+@import "../../mixin";
+
+.input {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+
+  .input__inputs {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+
+    p {
+      color: black;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      font-family: "inter";
+
+      span {
+        color: blue;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding-left: 5px;
+      outline: none;
+
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "inter";
+      letter-spacing: 0.5px;
+    }
+
+    .input__checkbox {
+      @include flexbox(start, center);
+      gap: 5px;
+
+      input {
+        width: 15px;
+        height: 15px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      height: 35px;
+      border-radius: 5px;
+      background: #033b54;
+      border: 2px solid #033b54;
+      cursor: pointer;
+      transition: 0.3s;
+
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "inter";
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: #00000023;
+      color: black;
+    }
+  }
+}
