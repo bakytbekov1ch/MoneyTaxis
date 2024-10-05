@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Input from "./shared/input/Input";
 import Success from "./shared/success/Success";
+import Motion from "./shared/motion/Motion";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/input" element={<Input />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/motion" element={<Motion />} />
         </Routes>
       </main>
       <Footer />

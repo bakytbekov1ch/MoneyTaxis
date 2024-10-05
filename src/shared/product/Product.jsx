@@ -23,11 +23,9 @@ function Product() {
               <h3>{item.number}%</h3>
             </div>
 
-            <button>
-              <Link to="/input" className="link">
-                {t("btn")}
-              </Link>
-            </button>
+            <Link to="/input" className="link">
+              <button>{t("btn")}</button>
+            </Link>
           </div>
         </div>
       ))}
