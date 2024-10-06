@@ -41,6 +41,20 @@
       letter-spacing: 0.5px;
     }
 
+    select {
+      width: 100%;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 5px;
+      outline: none;
+
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "inter";
+      letter-spacing: 0.5px;
+    }
+
     .input__checkbox {
       @include flexbox(start, center);
       gap: 5px;

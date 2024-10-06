@@ -28,7 +28,7 @@ function Hero() {
       </div>
 
       <div className="hero__input">
-        <p>https://web.telegram.org/k/#@Hellomyworld78</p>
+        <p>https://money-taxi.vercel.app/</p>
       </div>
     </div>
   );
