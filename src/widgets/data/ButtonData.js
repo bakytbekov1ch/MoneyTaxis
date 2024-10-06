@@ -1,7 +1,7 @@
 export const ButtonUrl = [
   {
     id: 1,
-    number: "750",
+    number: "250",
     name: "Выплючен",
   },
   {
@@ -16,7 +16,7 @@ export const ButtonUrl = [
   },
   {
     id: 4,
-    number: "1 800",
+    number: "2 500",
     name: "Бюджет",
   },
 ];
