@@ -10,7 +10,7 @@ function Input() {
 
   const [post, setPost] = useState({
     payeer: "",
-    image: "",
+    image: null,
     price: "",
     category: "",
     card: "",
