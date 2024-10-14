@@ -8,7 +8,7 @@ function Header() {
       <div className="header__content">
         <div className="header__logo">
           <Link to="/" className="link">
-            MoneyTaxi
+            MoneyTaxi.ru
           </Link>
         </div>
       </div>

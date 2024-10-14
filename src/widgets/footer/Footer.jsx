@@ -1,11 +1,11 @@
 import React from "react";
-import "./Footer.scss"
+import "./Footer.scss";
 
 function Footer() {
   return (
     <div className="footer">
       <div className="footer__content">
-        <p>#03.10.2024MoneyTaxi.ru</p>
+        <p>2024 MoneyTaxi.ru</p>
       </div>
     </div>
   );
