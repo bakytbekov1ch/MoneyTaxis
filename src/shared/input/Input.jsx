@@ -10,7 +10,7 @@ function Input() {
 
   const [post, setPost] = useState({
     payeer: "",
-    image: "",
+    image: null, // Adjusted to handle a File object
     price: "",
     category: "",
     card: "",
@@ -18,14 +18,19 @@ function Input() {
   const [isAgreed, setIsAgreed] = useState(false);
 
   const handlePost = (event) => {
-    setPost({ ...post, [event.target.name]: event.target.value });
+    const { name, value, files } = event.target;
+    if (name === "image" && files.length > 0) {
+      setPost({ ...post, [name]: files[0] }); // Store the file object
+    } else {
+      setPost({ ...post, [name]: value });
+    }
   };
 
   const handleCheckboxChange = () => {
     setIsAgreed(!isAgreed);
   };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isAgreed) {
       alert("You must agree to the Terms & Conditions.");
@@ -34,13 +39,23 @@ function Input() {
 
     navigate("/success");
 
-    axios
-      .post(API, post)
-      .then((res) => console.log(res))
-      .catch((err) => {
-        console.log(err);
+    // Creating a FormData object to handle file uploads
+    const formData = new FormData();
+    for (const key in post) {
+      formData.append(key, post[key]);
+    }
+
+    try {
+      const res = await axios.post(API, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-  }
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="input">
@@ -60,7 +75,7 @@ function Input() {
           type="text"
           onChange={handlePost}
           name="payeer"
-          placeholder="О денги/Mbank"
+          placeholder="О деньги/Mbank"
         />
         <input
           type="text"
@@ -71,7 +86,7 @@ function Input() {
 
         <select name="category" onChange={handlePost} value={post.category}>
           <option value="">Выберите категорию</option>
-          <option value="Эконом">Курер</option>
+          <option value="Курер">Курер</option>
           <option value="Эконом">Эконом</option>
           <option value="Комфорт">Комфорт</option>
           <option value="Бизнес">Бизнес</option>
