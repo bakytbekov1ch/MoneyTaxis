@@ -46,8 +46,8 @@ function Input() {
     <div className="input">
       <div className="input__inputs">
         <p>
-          Перевести на этот кошелек: <br />
-          <span>О деньги: +996 507 111 669</span>
+          Перевести на этот кошелек: <br /> О деньги:
+          <span> +996 507 111 669</span>
         </p>
 
         <select name="card" onChange={handlePost} value={post.card}>
