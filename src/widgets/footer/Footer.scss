@@ -4,7 +4,6 @@
   .footer__content {
     height: 50px;
     background: #f7b731;
-    border-radius: 3px 3px 15px 15px;
     @include flexbox(center);
 
     p {

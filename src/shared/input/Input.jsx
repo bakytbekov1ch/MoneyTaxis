@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Input.scss";
@@ -7,14 +6,14 @@ import "./Input.scss";
 const API = "https://6631e14cc51e14d69562ac56.mockapi.io/Mtaxi";
 
 function Input() {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const [post, setPost] = useState({
     payeer: "",
-    number: "",
+    image: "",
     price: "",
     category: "",
+    card: "",
   });
   const [isAgreed, setIsAgreed] = useState(false);
 
@@ -33,7 +32,7 @@ function Input() {
       return;
     }
 
-    navigate("/motion");
+    navigate("/success");
 
     axios
       .post(API, post)
@@ -47,14 +46,21 @@ function Input() {
     <div className="input">
       <div className="input__inputs">
         <p>
-          Перевести на этот кошелек: <span>P1098141289</span>
+          Перевести на этот кошелек: <br />
+          <span>+996 507 111 669</span>
         </p>
+
+        <select name="card" onChange={handlePost} value={post.card}>
+          <option value="">Выберите карта</option>
+          <option value="Деньги">О деньги</option>
+          <option value="Мбанк">Mbank</option>
+        </select>
 
         <input
           type="text"
           onChange={handlePost}
           name="payeer"
-          placeholder="Payeer"
+          placeholder="О денги/Mbank"
         />
         <input
           type="text"
@@ -62,19 +68,22 @@ function Input() {
           name="price"
           placeholder="Сумма"
         />
-        <input
-          type="text"
-          onChange={handlePost}
-          name="number"
-          placeholder="ID"
-        />
 
         <select name="category" onChange={handlePost} value={post.category}>
           <option value="">Выберите категорию</option>
+          <option value="Эконом">Курер</option>
           <option value="Эконом">Эконом</option>
           <option value="Комфорт">Комфорт</option>
           <option value="Бизнес">Бизнес</option>
         </select>
+
+        <label className="input__image-label">Загрузите чек</label>
+        <input
+          type="file"
+          onChange={handlePost}
+          name="image"
+          className="input__image"
+        />
 
         <div className="input__checkbox">
           <input
@@ -82,10 +91,10 @@ function Input() {
             checked={isAgreed}
             onChange={handleCheckboxChange}
           />
-          <p>I agree to all the Terms & Conditions</p>
+          <p>Я согласен.</p>
         </div>
 
-        <button onClick={handleSubmit}>{t("btn")}</button>
+        <button onClick={handleSubmit}>Отправить</button>
       </div>
     </div>
   );

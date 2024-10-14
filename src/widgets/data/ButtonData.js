@@ -1,12 +1,12 @@
 export const ButtonUrl = [
   {
     id: 1,
-    number: "250",
+    number: "0",
     name: "Выплючен",
   },
   {
     id: 2,
-    number: "1",
+    number: "0",
     name: "Роботет",
   },
   {
@@ -16,7 +16,7 @@ export const ButtonUrl = [
   },
   {
     id: 4,
-    number: "2 500",
+    number: "2 200",
     name: "Бюджет",
   },
 ];

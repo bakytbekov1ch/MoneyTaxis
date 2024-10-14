@@ -1,18 +1,13 @@
 @import "../../mixin";
 
 .header {
-  width: 100%;
   .header__content {
-    @include flexbox(space-between, center);
+    width: 100%;
+    @include flexbox(center);
+    background: #f7b731;
 
     .header__logo {
-      width: 140px;
-      height: 40px;
-      border-radius: 15px 15px 0 0;
-      border: 2px solid black;
-      background: #f7b731;
-      border-bottom: 5px solid black;
-
+      padding: 10px;
       @include flexbox(center);
 
       .link {
@@ -20,18 +15,6 @@
         font-size: 25px;
         font-weight: 600;
         font-family: "inter";
-      }
-    }
-
-    .header__translate {
-      select {
-        color: black;
-        font-size: 25px;
-        font-weight: 500;
-        font-family: "inter";
-        border: 2px solid black;
-        outline: none;
-        border-radius: 5px;
       }
     }
   }

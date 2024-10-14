@@ -41,20 +41,26 @@ body {
   font-size: 16px;
   color: #252b42;
   font-weight: 500;
-  background: url("https://previews.123rf.com/images/mallinka/mallinka1303/mallinka130300024/18633395-transport-background-with-taxi-sign-and-graphic-city-silhouette.jpg")
-    center/cover;
-
-  padding: 5% 0;
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   box-shadow: 0 0 15px #000;
-  border-radius: 15px;
   background: white;
 }
 
+.content {
+  flex: 1;
+}
+
+footer {
+  align-self: flex-end;
+}
+
 .container {
-  max-width: 720px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 10px;
 }

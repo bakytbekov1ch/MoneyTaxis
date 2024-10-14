@@ -1,13 +1,10 @@
 import React from "react";
 import { ProductUrl } from "../../widgets/data/ProductData";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 import "./Product.scss";
 
 function Product() {
-  const { t } = useTranslation();
-
   return (
     <div className="product">
       {ProductUrl.map((item) => (
@@ -16,15 +13,18 @@ function Product() {
 
           <div className="product__text">
             <h1>{item.name}</h1>
-            <h2>MIN: {item.price}₽</h2>
+            <h2>МИН: {item.price}₽</h2>
 
             <div className="product__timer">
-              <h3>{item.timer}час</h3>
+              <h3>
+                {item.timer}
+                час
+              </h3>
               <h3>{item.number}%</h3>
             </div>
 
             <Link to="/input" className="link">
-              <button>{t("btn")}</button>
+              <button>Купить</button>
             </Link>
           </div>
         </div>
