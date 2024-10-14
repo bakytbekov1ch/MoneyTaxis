@@ -10,7 +10,7 @@ function Input() {
 
   const [post, setPost] = useState({
     payeer: "",
-    image: null, // Adjusted to handle a File object
+    image: "",
     price: "",
     category: "",
     card: "",
@@ -18,19 +18,14 @@ function Input() {
   const [isAgreed, setIsAgreed] = useState(false);
 
   const handlePost = (event) => {
-    const { name, value, files } = event.target;
-    if (name === "image" && files.length > 0) {
-      setPost({ ...post, [name]: files[0] }); // Store the file object
-    } else {
-      setPost({ ...post, [name]: value });
-    }
+    setPost({ ...post, [event.target.name]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
     setIsAgreed(!isAgreed);
   };
 
-  const handleSubmit = async (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!isAgreed) {
       alert("You must agree to the Terms & Conditions.");
@@ -39,23 +34,13 @@ function Input() {
 
     navigate("/success");
 
-    // Creating a FormData object to handle file uploads
-    const formData = new FormData();
-    for (const key in post) {
-      formData.append(key, post[key]);
-    }
-
-    try {
-      const res = await axios.post(API, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+    axios
+      .post(API, post)
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err);
       });
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  }
 
   return (
     <div className="input">
@@ -86,7 +71,7 @@ function Input() {
 
         <select name="category" onChange={handlePost} value={post.category}>
           <option value="">Выберите категорию</option>
-          <option value="Курер">Курер</option>
+          <option value="Эконом">Курер</option>
           <option value="Эконом">Эконом</option>
           <option value="Комфорт">Комфорт</option>
           <option value="Бизнес">Бизнес</option>
