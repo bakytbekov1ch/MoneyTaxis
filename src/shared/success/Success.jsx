@@ -11,12 +11,12 @@ function Success() {
         <img src={success} alt="" />
         <p>
           Ваш запрос отправлен. По истечении времени деньги будут положены в ваш
-          кошелек. В случае ошибки <mark>TG.kalmamat0v</mark> обратитесь по этому
-          адресу
+          кошелек. В случае ошибки <mark>TG.kalmamat0v</mark> обратитесь по
+          этому адресу
         </p>
         <button>
           <Link to="/" style={{ color: "black" }}>
-            BACK TO HOME
+            Главный
           </Link>
         </button>
       </div>
