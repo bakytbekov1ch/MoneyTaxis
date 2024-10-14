@@ -11,7 +11,7 @@ export const ButtonUrl = [
   },
   {
     id: 3,
-    number: "23",
+    number: "73",
     name: "Все игрок",
   },
   {
